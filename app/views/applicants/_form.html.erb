@@ -1,0 +1,39 @@
+<%= form_with model: applicant do |form| %>
+  
+  <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% applicant.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :email_id %><br>
+      <%= form.text_field :email_id %><br>
+      <% applicant.errors.full_messages_for(:email_id).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :phone_no %><br>
+      <%= form.text_field :phone_no %><br>
+      <% applicant.errors.full_messages_for(:phone_no).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :education_details %><br>
+      <%= form.text_area :education_details %><br>
+      <% applicant.errors.full_messages_for(:education_details).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Submit", class: "btn" %>
+    </div>
+
+<% end %>

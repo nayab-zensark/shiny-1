@@ -1,0 +1,39 @@
+<%= form_with model: recruiter do |form| %>
+  
+  <div>
+    <%= form.label :company_name %><br>
+    <%= form.text_field :company_name %>
+    <% recruiter.errors.full_messages_for(:company_name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :company_id %><br>
+    <%= form.text_field :company_id %><br>
+    <% recruiter.errors.full_messages_for(:company_id).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email_id %><br>
+    <%= form.text_field :email_id %><br>
+    <% recruiter.errors.full_messages_for(:email_id).each do |message| %>
+      div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :phone_no %><br>
+    <%= form.text_field :phone_no %><br>
+    <% recruiter.errors.full_messages_for(:phone_no).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+  </div>
+    <br>
+  <div>
+    <%= form.submit "submit", class:  "btn" %>
+  </div>
+
+<% end %>

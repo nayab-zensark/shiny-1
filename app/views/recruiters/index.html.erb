@@ -1,0 +1,37 @@
+<%= render 'layouts/dash'%>
+<div class="div1">
+  <h3> Recruiters </h3> 
+  <div>
+    <table class="table">
+      <tr>
+        <th>Company Name</th>
+        <th>Company Id</th>
+        <th>Email Id</th>
+        <th>Phone No</th>
+      </tr>
+      <% @recruiters.each do |recruiter| %>
+        <tr>
+          <td>
+          <%= link_to recruiter.company_name, recruiter %>
+          </td>
+          <td>
+          <%= recruiter.company_id%>
+          </td>
+          <td>
+          <%= recruiter.email_id%>
+          </td>
+          <td>
+          <%= recruiter.phone_no%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    
+  </div>
+
+  <%= button_to "Add Recruiter",new_recruiter_path ,method: :get, class: "btn" %>
+      
+</div>
+
+
+

@@ -1,0 +1,23 @@
+<%= render 'layouts/dash'%>
+<div class="div1">
+<h3>Recruiter Details</h3>
+<p>Company Name:<%= @recruiter.company_name %></p>
+<p>Company ID:<%= @recruiter.company_id %></p>
+<p>Email Id:<%= @recruiter.email_id %></p>
+<p>Phone No:<%= @recruiter.phone_no %></p>
+
+  <%= link_to "Edit", edit_recruiter_path(@recruiter) %>
+  <%= link_to "Destroy", recruiter_path(@recruiter), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</div>  
+<div class="div1">
+<h3> Job Applications</h3>
+<% @jap.each do |jap| %>
+  <p>Job Name:<%= jap.job_name %></p>
+  <p>Job Description:<%= jap.job_description %></p>
+  <p>Qualification:<%= jap.qualification %></p>
+  <p>Last Date:<%= jap.last_date%></p>
+<% end %>
+</div>    

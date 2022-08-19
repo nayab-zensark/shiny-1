@@ -1,0 +1,34 @@
+<%= render 'layouts/dash'%>
+<div class="div1">
+  <h3> Job Applications </h3> 
+  <div>
+    <table class="table">
+      <tr>
+        <th>Job Name</th>
+        <th>Job Description</th>
+        <th>Qualification</th>
+        <th>Last Date</th>
+      </tr>
+      <% @job_applications.each do |ja| %>
+        <tr>
+          <td>
+          <%= link_to ja.job_name, ja %>
+          </td>
+          <td>
+          <%= ja.job_description%>
+          </td>
+          <td>
+          <%= ja.qualification%>
+          </td>
+          <td>
+          <%= ja.last_date%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    
+  </div>
+
+  <%= button_to "Add Job Application",new_job_application_path ,method: :get, class: "btn" %>
+      
+</div>

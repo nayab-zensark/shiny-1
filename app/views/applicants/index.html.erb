@@ -1,0 +1,34 @@
+<%= render 'layouts/dash'%>
+<div class="div1">
+  <h3> Applicants </h3> 
+  <div>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Email Id</th>
+        <th>Phone No</th>
+        <th>Education Details</th>
+      </tr>
+      <% @applicants.each do |applicant| %>
+        <tr>
+          <td>
+          <%= link_to applicant.name, applicant %>
+          </td>
+          <td>
+          <%= applicant.email_id%>
+          </td>
+          <td>
+          <%= applicant.phone_no%>
+          </td>
+          <td>
+          <%= applicant.education_details%>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    
+  </div>
+
+  <%= button_to "Add Applicant",new_applicant_path ,method: :get, class: "btn" %>
+      
+</div>

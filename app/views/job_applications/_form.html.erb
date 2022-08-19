@@ -1,0 +1,48 @@
+<%= form_with model: job_application do |form| %>
+    <div>
+      <%= form.label :recruiter_id %><br>
+      <%= form.select :recruiter_id, Recruiter.all.collect{|recruiter| [recruiter.company_name, recruiter.id]} %>
+    </div>
+
+    <div>
+      <%= form.label :applicant_id %><br>
+      <%= form.select :applicant_id, Applicant.all.collect{|applicant| [applicant.name,applicant.id]} %><br>
+    </div>
+
+    <div>
+      <%= form.label :job_name %><br>
+      <%= form.text_field :job_name %><br>
+      <% job_application.errors.full_messages_for(:job_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :job_description %><br>
+      <%= form.text_area :job_description %><br>
+      <% job_application.errors.full_messages_for(:job_description).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :qualification %><br>
+      <%= form.text_field :qualification %><br>
+      <% job_application.errors.full_messages_for(:qualification).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :last_date %><br>
+      <%= form.date_field :last_date %><br>
+      <% job_application.errors.full_messages_for(:last_date).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "submit", class: "btn"%>
+    </div>
+
+<% end %>
