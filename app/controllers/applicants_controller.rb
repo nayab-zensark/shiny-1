@@ -16,9 +16,11 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(applicant_params)
   
       if @applicant.save
-        redirect_to @applicant
+        redirect_to applicants_path
+        flash[:message] = "New Applicant successfully created."
       else
         render :new, status: :unprocessable_entity
+        flash[:message] = "Try to create again."
       end
   end
   
@@ -30,9 +32,11 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.find(params[:id])
   
       if @applicant.update(applicant_params)
-        redirect_to @applicant
+        redirect_to applicants_path
+        flash[:message] = "Applicant successfully updated."
       else
         render :edit, status: :unprocessable_entity
+        flash[:message] = "Try to update again."
       end
   end
   
@@ -40,7 +44,8 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.find(params[:id])
     @applicant.destroy
   
-    redirect_to root_path, status: :see_other
+    redirect_to applicants_path, status: :see_other
+    flash[:message] = "Applicant deleted successfully."
   end
   
   private

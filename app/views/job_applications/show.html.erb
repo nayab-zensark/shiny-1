@@ -9,8 +9,8 @@
 <p>Last Date:<%= @job_application.last_date%></p>
 
 
-  <%= link_to "Edit", edit_job_application_path(@job_application) %>
-  <%= link_to "Destroy", job_application_path(@job_application), data: {
+  <%= link_to "Edit", edit_job_application_path(@job_application), class: "btn btn-primary btn-sm" %>
+  <%= link_to "Destroy", job_application_path(@job_application), class: "btn btn-danger btn-sm", data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>

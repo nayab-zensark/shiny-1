@@ -24,6 +24,8 @@
   flex-direction :column;
   justify-content:center;
   align-items :center;
+  border-color: rgb(5, 5, 175);
+
  }
 
  .div1{
@@ -42,8 +44,18 @@
  }
 
 .btn{
-background-color: rgb(30, 30, 139);
-color: antiquewhite;
+  background-color: rgb(30, 30, 139);
+  color: antiquewhite;
+}
+
+.btn-primary{
+  color: blanchedalmond;
+  background-color: rgb(59, 134, 248);
+}
+
+.btn-danger{
+  color: blanchedalmond;
+  background-color: rgb(252, 48, 48);
 }
 
  .table,th, td {

@@ -7,8 +7,8 @@
 <p>Applicant Education details:<%= @applicant.education_details %></p>
 
 
-  <%= link_to "Edit", edit_applicant_path(@applicant) %>
-  <%= link_to "Destroy", applicant_path(@applicant), data: {
+  <%= link_to "Edit", edit_applicant_path(@applicant), class: "btn btn-primary btn-sm" %>
+  <%= link_to "Destroy", applicant_path(@applicant), class: "btn btn-danger btn-sm", data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>

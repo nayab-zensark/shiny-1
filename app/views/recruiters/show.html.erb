@@ -6,8 +6,8 @@
 <p>Email Id:<%= @recruiter.email_id %></p>
 <p>Phone No:<%= @recruiter.phone_no %></p>
 
-  <%= link_to "Edit", edit_recruiter_path(@recruiter) %>
-  <%= link_to "Destroy", recruiter_path(@recruiter), data: {
+<%= link_to "Edit", edit_recruiter_path(@recruiter), class: "btn btn-primary btn-sm" %>
+<%= link_to "Destroy", recruiter_path(@recruiter), class: "btn btn-danger btn-sm", data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>

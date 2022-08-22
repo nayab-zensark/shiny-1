@@ -15,9 +15,11 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.new(job_application_params)
   
       if @job_application.save
-        redirect_to @job_application
+        redirect_to job_applications_path
+        flash[:message] = "New Job Application successfully created."
       else
         render :new, status: :unprocessable_entity
+        flash[:message] = "Try to create again."
       end
   end
   
@@ -29,9 +31,11 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.find(params[:id])
   
       if @job_application.update(job_application_params)
-        redirect_to @job_application
+        redirect_to job_applications_path
+        flash[:message] = "Job Application successfully updated."
       else
         render :edit, status: :unprocessable_entity
+        flash[:message] = "Try to update again."
       end
   end
   
@@ -39,7 +43,8 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.find(params[:id])
     @job_application.destroy
   
-    redirect_to root_path, status: :see_other
+    redirect_to job_applications_path, status: :see_other
+    flash[:message] = "Job Application successfully deleted."
   end
   
   private

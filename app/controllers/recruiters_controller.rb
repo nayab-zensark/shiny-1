@@ -16,9 +16,11 @@ class RecruitersController < ApplicationController
     @recruiter = Recruiter.new(recruiter_params)
   
       if @recruiter.save
-        redirect_to @recruiter
+        redirect_to recruiters_path
+        flash[:message] = "New Recruiter successfully created."
       else
         render :new, status: :unprocessable_entity
+        flash[:message] = "Try to create again."
       end
   end
   
@@ -30,9 +32,11 @@ class RecruitersController < ApplicationController
     @recruiter = Recruiter.find(params[:id])
   
       if @recruiter.update(recruiter_params)
-        redirect_to @recruiter
+        redirect_to recruiters_path
+        flash[:message] = "Recruiter successfully updated."
       else
         render :edit, status: :unprocessable_entity
+        flash[:message] = "Try to update again."
       end
   end
   
@@ -40,7 +44,8 @@ class RecruitersController < ApplicationController
     @recruiter = Recruiter.find(params[:id])
     @recruiter.destroy
   
-    redirect_to root_path, status: :see_other
+    redirect_to recruiters_path, status: :see_other
+    flash[:message] = "Recruiter deleted successfully."
   end
   
   private
