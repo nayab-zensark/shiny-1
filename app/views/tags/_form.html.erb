@@ -1,0 +1,31 @@
+<%= form_with model: tag do |form| %>
+  
+    <div>
+      <%= form.label :tag_name %><br>
+      <%= form.text_field :tag_name %>
+      <% tag.errors.full_messages_for(:tag_name).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.label :tag_description %><br>
+      <%= form.text_area :tag_description %><br>
+      <% tag.errors.full_messages_for(:tag_description).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.label :tag_code %><br>
+      <%= form.number_field :tag_code %><br>
+      <% tag.errors.full_messages_for(:tag_code).each do |message| %>
+        div><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Save", class:  "btn" %>
+    </div>
+  
+  <% end %>

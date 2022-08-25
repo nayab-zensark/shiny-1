@@ -1,0 +1,42 @@
+<%= render 'layouts/dash'%>
+<div class="div">
+<div class="div1">
+  <h1>Tags</h1>
+  
+  <table class="table">
+    <tr>
+      <th>Tag Name</th>
+      <th>Tag Description</th>
+      <th>Tag Code</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td>
+          <%= tag.tag_name %>
+        </td>
+        <td>
+          <%= tag.tag_description %>
+        </td>
+        <td>
+          <%= tag.tag_code %>
+        </td>
+        <td>
+        <%= link_to "edit", edit_tag_path(tag), class: "btn btn-primary btn-sm" %>
+        </td>   
+        <td>
+          <%= link_to "Destroy", tag_path(tag), class: "btn btn-danger btn-sm", data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+    <%= link_to "New", new_tag_path(@tag), class: "btn btn-secondary btn-sm" %>
+  </div>
+</div>
+
+
+

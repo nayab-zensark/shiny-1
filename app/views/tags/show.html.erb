@@ -1,0 +1,11 @@
+<%= render 'layouts/dash'%>
+<div class="div">
+
+<h3>Tag Name: </h3><h4><%= @tag.tag_name %></h4>
+
+<h5> Products Related </h5>
+<% @ab.each do |t| %>
+    <p>Product Name: <%=  t.product_name %></p>
+    <p>Cost: <%=  t.cost %></p>
+<% end %>
+</div>

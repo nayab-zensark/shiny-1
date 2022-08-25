@@ -1,0 +1,39 @@
+<%= form_with model: product do |form| %>
+  <div>
+    <%= form.label :product_name %><br>
+    <%= form.text_field :product_name %>
+    <% product.errors.full_messages_for(:product_name).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :product_details %><br>
+    <%= form.text_area :product_details %><br>
+    <% product.errors.full_messages_for(:product_details).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :cost %><br>
+    <%= form.number_field :cost %><br>
+    <% product.errors.full_messages_for(:cost).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>  
+    <% for tag in @all_tags %>
+    <div>
+    <%= check_box_tag "product[tag_ids][]",tag.id, @product.tags.include?(tag) %>
+    <%= tag.tag_name %>
+    <% end %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "btn" %>
+  </div>
+  
+<% end %>

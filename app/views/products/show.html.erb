@@ -1,0 +1,14 @@
+<%= render 'layouts/dash'%>
+<div class="div">
+<div class="div1">
+<h3>Product Details</h3>
+<p>Product Name:<%= @product.product_name %></p>
+<p>Product Details:<%= @product.product_details %></p>
+<p>Cost:<%= @product.cost %></p>
+
+<h3> Tags </h3>
+<% @t.each do |t| %>
+    <p>Tag Name: <%= link_to t.tag_name, t %></p>
+<% end %>
+</div>
+</div> 
