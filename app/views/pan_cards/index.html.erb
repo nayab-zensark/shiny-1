@@ -1,0 +1,10 @@
+<h1>PanCards</h1>
+
+
+<% @pan_cards.each do |pan_card| %>
+    
+    <p> Name: <%= link_to pan_card.name, pan_card %></p>
+    <p> Pan No:<%= @pan_card.pan_no %></p>
+    <p> Gender:<%= @pan_card.gender %></p>
+     
+<% end %>

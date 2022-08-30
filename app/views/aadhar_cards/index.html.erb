@@ -1,0 +1,9 @@
+<h1>AadharCards</h1>
+<% @aadhar_cards.each do |aadhar_card| %>
+    
+    <p> Name:<%= link_to aadhar_card.name, aadhar_card %></p>
+    <p> Aadhar No:<%= aadhar_card.aadhar_no %></p>
+    <p> Dob:<%= aadhar_card.dob %></p>
+    <p> Address:<%= aadhar_card.address %></p> 
+   
+<% end %>

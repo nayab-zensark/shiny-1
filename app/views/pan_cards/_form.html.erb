@@ -1,0 +1,29 @@
+<%= form_with model: pan_card do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% pan_card.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.label :pan_no %><br>
+      <%= form.text_field :pan_no %><br>
+      <% pan_card.errors.full_messages_for(:pan_no).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.label :gender %><br>
+      <%= form.text_field :gender %><br>
+      <% pan_card.errors.full_messages_for(:gender).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.submit "Save", class: "btn" %>
+    </div>
+<% end %>

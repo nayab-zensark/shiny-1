@@ -1,0 +1,37 @@
+<%= form_with model: aadhar_card do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% aadhar_card.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.label :aadhar_no %><br>
+      <%= form.number_field :aadhar_no %><br>
+      <% aadhar_card.errors.full_messages_for(:aadhar_no).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+    
+    <div>
+      <%= form.label :dob %><br>
+      <%= form.date_field :dob %><br>
+      <% aadhar_card.errors.full_messages_for(:dob).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :address %><br>
+      <%= form.text_area :address %><br>
+      <% aadhar_card.errors.full_messages_for(:address).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.submit "Save", class: "btn" %>
+    </div>
+<% end %>
