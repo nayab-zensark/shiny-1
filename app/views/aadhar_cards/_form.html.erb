@@ -32,6 +32,11 @@
     </div>
   
     <div>
-      <%= form.submit "Save", class: "btn" %>
+      <%= form.label :profile_image %><br>
+      <%= form.file_field :profile_image %><br>
+    </div>
+    <br>
+    <div>
+      <%= form.submit "Save", class: "btn btn-primary" %>
     </div>
 <% end %>

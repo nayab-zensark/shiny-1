@@ -1,9 +1,21 @@
+<div class="background">
+<center>
+<div class="land2">
 <h1>AadharCards</h1>
+<div class="div">
 <% @aadhar_cards.each do |aadhar_card| %>
-    
-    <p> Name:<%= link_to aadhar_card.name, aadhar_card %></p>
+     <p> Name:<%= link_to aadhar_card.name, aadhar_card %></p>
     <p> Aadhar No:<%= aadhar_card.aadhar_no %></p>
     <p> Dob:<%= aadhar_card.dob %></p>
-    <p> Address:<%= aadhar_card.address %></p> 
-   
+    <p> Address:<%= aadhar_card.address %></p>  
 <% end %>
+
+</div><br>
+<%= link_to "New Aadhar Card", new_aadhar_card_path(@aadhar_card), class: "btn btn-secondary btn-sm" %><br>
+<br>
+<div class="pagination">
+<%= paginate @aadhar_cards %>
+</div>
+</div>
+</center>
+</div>

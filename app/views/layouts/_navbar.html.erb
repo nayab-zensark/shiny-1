@@ -1,5 +1,21 @@
-<nav class="header">
+<nav class="navbar">
     <div class="container-fluid">
-    
+    <div class="">
+    <a class="navbar a" href="#">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OVDILN_A-R0gCsx5YotiUhfo1voVleu1rA&usqp=CAU.png" alt="" width="30" height="27">
+    </a>
+    <%= link_to "INFOALL", home_index_path, class: "link", method: :get%>
+    </div>
+    <% if current_user %>
+      <%= button_to "Log out", destroy_user_session_path, class: "btn btn-info", method: :delete %>
+    <% end %>
   </div>
 </nav>
+
+
+
+
+
+
+
+

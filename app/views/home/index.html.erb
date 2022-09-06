@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<div class= "background">
+<center> 
+<div class= "full">
+<div class="ad">
+<img src="https://www.pngkey.com/png/detail/224-2240746_aadhaar-logo-aadhar-card-logo-png.png" class=" adlogo" alt="Aadhaar Logo">
+<%= button_to "Aadhar Card", aadhar_cards_path, class: "btn btn-light", method: :get%>
+<br>
+</div><br>
+
+<div class="ad">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDsgBdCXuBNaRFUxFIYgp9AQVCdLSjpaE9UQ&amp;usqp=CAU" class=" panlogo" alt="Pan Logo">
+<%= button_to "Pan Card", pan_cards_path, class: "btn btn-light", method: :get%>
+<br>
+</div>
+</div>
+</center>
+</div>

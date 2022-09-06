@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     
     def after_sign_in_path_for(resource)
         if current_user
-            aadhar_cards_path
+            home_index_path
        else
            render root_path
        end

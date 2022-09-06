@@ -1,10 +1,18 @@
+<div class="background">
+<center>
+<div class="land2">
+<div>
 <h1>PanCards</h1>
-
-
 <% @pan_cards.each do |pan_card| %>
-    
     <p> Name: <%= link_to pan_card.name, pan_card %></p>
-    <p> Pan No:<%= @pan_card.pan_no %></p>
-    <p> Gender:<%= @pan_card.gender %></p>
-     
+    <p> Pan No:<%= pan_card.pan_no %></p>
+    <p> Gender:<%= pan_card.gender %></p>
 <% end %>
+</div><br>
+<%= link_to "Add Pan Card", new_pan_card_path, class: "btn btn-secondary btn-sm" %><br>
+<br><div class="pagination">
+<%= paginate @pan_cards %>
+</div>
+</div>
+</center>
+</div>

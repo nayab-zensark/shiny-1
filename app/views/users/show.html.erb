@@ -1,2 +1,16 @@
+<div class="background">
+<center>
+<div class="land2">
 <h3>User Details</h3>
 <p> Name:<%= @user.name %></p>
+<p> Email: <%= @user.email %>
+
+<%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary btn-sm" %>
+<%= link_to "Destroy", user_path(@user), class: "btn btn-danger btn-sm", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+</div>
+</center>
+</div>

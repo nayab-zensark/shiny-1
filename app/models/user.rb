@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :userable, :polymorphic => true
+  belongs_to :userable, :polymorphic => true, optional: true
 
-  validates :name, presence: true 
+   validates :name, presence: true 
 end

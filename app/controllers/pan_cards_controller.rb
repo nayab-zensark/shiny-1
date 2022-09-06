@@ -2,20 +2,24 @@ class PanCardsController < ApplicationController
   
   
   def index
-    @pan_cards = PanCard.all
+    @pan_cards = PanCard.all.page(params[:page])
   end
 
   def show
     @pan_card = PanCard.find(params[:id])
-    
+    @userable = @pan_card
+    @users = @userable.users
+    @user = User.new
   end
   
   def new
     @pan_card = PanCard.new
   end
+
+  
   
   def create
-    binding.pry
+    
     @pan_card = PanCard.new(pan_card_params)
   
       if @pan_card.save
@@ -52,8 +56,9 @@ class PanCardsController < ApplicationController
   end
   
   private
+
     def pan_card_params
-      params.require(:pan_card).permit(:name, :pan_no, :gender)
+      params.require(:pan_card).permit(:name, :pan_no, :gender, :profile_image)
     end
 
 end

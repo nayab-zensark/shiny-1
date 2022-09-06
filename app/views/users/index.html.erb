@@ -1,7 +1,11 @@
+<div class="background">
+<center>
+<div class="land2">
 <h1>Users</h1>
-
 <% @users.each do |user| %>
-    
-      <%= link_to user.name, user %>
-     
+      <p>Name:<%= link_to user.name, user %></p>
+      <p>Email:<%= user.email %> 
 <% end %>
+</div>
+</center>
+</div>

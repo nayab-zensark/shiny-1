@@ -15,15 +15,108 @@
  *= require_self
  */
 
- .header{
-    background-color: rgb(82, 82, 231);
+  
+
+.navbar{
+    background-color: rgb(253, 120, 10);
+    height: 65px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.background{
+  background-image: url(https://static.vecteezy.com/system/resources/previews/005/157/645/original/indian-flag-theme-republic-day-watercolor-texture-patriotic-background-free-vector.jpg);
+  background-size: cover;
+  height: 130vh;
+}
+
+.link {
+    
     color: rgb(253, 250, 244);
-    font-size: larger;
-    height: 10vh;
+    font-size: x-large;
+    height: 12vh;
     display: flex;
     flex-direction :column;
-    justify-content:center;
-    align-items :center;
-    border-color: rgb(5, 5, 175);
+    align-items: center;
+    justify-content: center;
+    float: left;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    
+  }
+
+.pagination {
+  text-align: center;
+  justify-content: center;
+}
+
+.adlogo{
+  height: 250px;
+  width: 280px;
+}
+
+.panlogo{
+  height: 250px;
+  width: 280px;
+}
+
+.full{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
+  padding-top: 230px;
+}
+
+.land{
+  padding-top: 280px;
+}
+.land2{
+  padding-top: 90px;
+}
+
+.land1{
+  padding-top: 250px;
+  padding-left: 400px;
   
+}
+
+.ad{
+  padding-left: 120px;
+  align-items:center;
+  justify-content: center;
+}
+
+.form{
+  background-color: white;
+  width: 50%;
+  padding: 12px 20px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  
+}
+.div{
+
+    background-color: white;
+    width: 40%;
+    padding: 22px 20px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    border: 5ch;
+    border-color: rgb(37, 13, 13);
+
 }

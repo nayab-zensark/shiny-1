@@ -1,5 +1,28 @@
+<div class="background">
+<center>
+<div class="land2">
 <h3>Aadhar Card Details</h3>
+<% if @aadhar_card.profile_image.attached? %>
+    <%= image_tag @aadhar_card.profile_image, style: "width:100px;height:100px" %>
+<% end %>
 <p> Name:<%= @aadhar_card.name %></p>
 <p> Aadhar No:<%= @aadhar_card.aadhar_no %></p>
 <p> Dob:<%= @aadhar_card.dob %></p>
 <p> Address:<%= @aadhar_card.address %></p>
+
+<%= link_to "Edit", edit_aadhar_card_path(@aadhar_card), class: "btn btn-primary" %>
+<%= link_to "Back", aadhar_cards_path, class: "btn btn-primary" %>
+
+
+
+<div>
+<h5>Users</h5>
+<% @aadhar_card.users.each do |user| %>
+    <p><%= user.name %></p>
+<% end %>
+</div>
+
+<p><%= link_to "New User", [:new, @userable, :user], class: "btn btn-secondary" %> </p>
+</div>
+</center>
+</div>

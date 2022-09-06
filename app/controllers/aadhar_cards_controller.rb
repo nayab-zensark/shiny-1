@@ -1,21 +1,22 @@
 class AadharCardsController < ApplicationController
-  
 
   def index
-    @aadhar_cards = AadharCard.all
+    @aadhar_cards = AadharCard.all.page(params[:page])
   end
 
   def show
     @aadhar_card = AadharCard.find(params[:id])
-    
+    @userable = @aadhar_card
+    @users = @userable.users
+    @user = User.new
   end
   
   def new
     @aadhar_card = AadharCard.new
   end
-  
+ 
   def create
-    binding.pry
+    
     @aadhar_card = AadharCard.new(aadhar_card_params)
   
       if @aadhar_card.save
@@ -52,8 +53,10 @@ class AadharCardsController < ApplicationController
   end
   
   private
+ 
+
     def aadhar_card_params
-      params.require(:aadhar_card).permit(:name, :aadhar_no, :dob, :address)
+      params.require(:aadhar_card).permit(:name, :aadhar_no, :dob, :address, :profile_image)
     end
 
 end
