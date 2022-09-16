@@ -1,0 +1,33 @@
+<div class= "div1">
+    <div class= "leftbox">
+        <center><h3><%= user.name %></h3></center>
+    </div>
+    <div class= "middlebox">
+        <center><%= render 'profile/follower_count', user: user %></center>
+    </div>
+    <div class= "rightbox"><center><%= user.followings.count %> following</center></div>
+    </div>
+</div>
+
+<div class= "">
+<center>
+    <% if user == current_user %>
+        <% if current_user.id  %>
+            <%= current_user.name %>
+            <div class="user-images">
+            <% current_user.posts.each do |u| %>
+                <div class="wrapper">
+                    <%=image_tag u.image %>
+                </div>
+            <% end %>
+                
+            </div>
+            
+        <% end %>
+        
+        <% elsif current_user %>
+        <%= render  'profile/follow_button', user: @user %>
+    <% end %>
+    
+</center>
+</div>

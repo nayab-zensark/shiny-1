@@ -1,0 +1,58 @@
+
+<% if current_user %>
+<div class="div1">
+    <div class= "leftbox">
+    
+    <p>Name: <%=  current_user.name %></p>
+    <p>Email Id: <%= current_user.email %></p>
+    </div>
+    <div class= "middlebox">
+    <p>Following</p>
+    
+        <% current_user.followings.each do |u| %>
+            <%= u.name %>   
+        <br />
+        <% end %>
+    </div>
+    <br />
+    <div class= "rightbox"
+    <p>Followers</p>
+        <% current_user.followers.each do |u| %>
+            <%=  u.name %>
+            <% end %>
+    </div>
+</div>
+<div class="">
+<hr />
+<center>
+        <% current_user.followers.each do |u| %>
+            
+            <% u.posts.each do |post|%>
+                <%=  u.name %>
+                <div class="wrapper">
+                  <%=image_tag post.image %>
+                </div>
+              <% end %>
+            
+        <br />
+        <% end %>
+    <hr />
+    <%= render "home/post", post: @post %>
+</center>
+</div>
+
+<% else %>
+
+    <center>
+    <div class="land2">
+    <h1>WELCOME TO SOCIO</h1>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+    <%= link_to "Signup", new_user_registration_path, class: "btn btn-primary" %>
+    </div>
+    </center>
+
+<% end %>
+
+
+
+
