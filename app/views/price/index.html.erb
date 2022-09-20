@@ -1,0 +1,5 @@
+<p> The price of bitcoin is <strong> <%= @data %> </strong> USD.</p>
+<p> Bitcoin price over a week <strong> <%= column_chart(@price_daily) %> </strong> </p>
+<%= render "form", price: @data %>
+
+  
